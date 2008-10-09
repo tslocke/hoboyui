@@ -20,12 +20,14 @@ Finally you need to activate the JavaScript in any pages where you want the edit
     
     <extend tag="page">
       <old-page merge>
-        <append-scripts:><yui-editor-javascripts/></append-scripts:>
-        <body: class="yui-skin-sam"/>
+        <append-head:><yui-editor-assets/></append-head:>
+        <body: class="yui-skin-sam" param/>
       </old-page>
     </page>
     
-You should now have a YUI Rich Editor for any `<input:foo>` where `foo` is declared with the `:html` type in your model.
+You should now have a YUI Rich Editor for any `<input:foo>` where the field `foo` is declared with the `:html` type (HoboFields::HtmlString) in your model.
 
-For more information on the YUI Rich Editor see http://developer.yahoo.com/yui/editor/
 
+## More Information
+
+For more information see: [YUI Rich Editor](http://developer.yahoo.com/yui/editor/)
