@@ -27,4 +27,5 @@ Finally you need to activate the JavaScript in any pages where you want the edit
     
 You should now have a YUI Rich Editor for any `<input:foo>` where `foo` is declared with the `:html` type in your model.
 
-For more information on the YUI Rich Editor see [http://developer.yahoo.com/yui/editor/]()
+For more information on the YUI Rich Editor see http://developer.yahoo.com/yui/editor/
+
