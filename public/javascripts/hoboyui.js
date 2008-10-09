@@ -1,20 +1,20 @@
 HoboYui = {
     initEditor: function() {
-        $$('textarea.html').each(function(e,i) {
-            HoboYui.makeEditor().render();
+        $$('textarea.html').each(function(el,i) {
+            HoboYui.makeEditor(el).render();
         });
     },
 
-    defaultEditor: function() {
-        return new YAHOO.widget.Editor(e.id, {
+    defaultEditor: function(el) {
+        return new YAHOO.widget.Editor(el.id, {
             height: '300px',
             width: '99%',
             handleSubmit: true
         });
     },
     
-    simplifiedEditor: function() {
-        return new YAHOO.widget.Editor(e.id, {
+    simplifiedEditor: function(el) {
+        return new YAHOO.widget.Editor(el.id, {
             height: '300px',
             autoHeight: true,
             width: '99%',
@@ -32,7 +32,6 @@ HoboYui = {
 	        buttons: [
 	            { type: 'push', label: 'Bold CTRL + SHIFT + B', value: 'bold' },
 	            { type: 'push', label: 'Italic CTRL + SHIFT + I', value: 'italic' },
-	            { type: 'push', label: 'Underline CTRL + SHIFT + U', value: 'underline' },
 	        ]
 	    },
 	    { type: 'separator' },
@@ -67,7 +66,7 @@ HoboYui = {
 	        ]
 	    },
 	    { type: 'separator' },
-	    { group: 'insertitem',
+	    { group: 'misc',
 	        buttons: [
         		{ type: 'push', label: 'Remove Formatting', value: 'removeformat', disabled: true },
         		{ type: 'push', label: 'Show/Hide Hidden Elements', value: 'hiddenelements' }
@@ -75,6 +74,8 @@ HoboYui = {
 		}
 	],
 	
-	makeEditor: simplifiedEditor
-    
+	makeEditor: null // Set this to a function that will create a YAHOO.widget.Editor
+	
 }
+
+HoboYui.makeEditor = HoboYui.simplifiedEditor

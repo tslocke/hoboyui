@@ -1,4 +1,4 @@
-<def tag="yui-editor-javascripts">
+<def tag="yui-editor-assets">
   <!-- Skin CSS file -->
   <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.5.2/build/assets/skins/sam/skin.css"/>
   <!-- Utility Dependencies -->
@@ -10,5 +10,8 @@
   <script src="http://yui.yahooapis.com/2.5.2/build/button/button-min.js"></script>
   <!-- Source file for Rich Text Editor-->
   <script src="http://yui.yahooapis.com/2.5.2/build/editor/editor-beta-min.js"></script>
-  <script type="text/javascript" >Event.onReady(HoboYui.initEditor())</script>
-</extend>
+  <javascript name="hoboyui"/>
+  <script type="text/javascript" >Event.onReady(HoboYui.initEditor)</script>
+  
+  <stylesheet name="hoboyui"/>
+</def>
