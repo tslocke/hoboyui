@@ -4,17 +4,18 @@ This is a simple Rails plugin to be used in conjunction with [Hobo](http://hoboc
 
 This plugin may later become a general home for Hobo extensions that utilise YUI.
 
+
 ## Installing
 
 Install with
 
     ruby script/plugin install git://github.com/tablatom/hoboyui.git
     
-The plugin has an instal.rb script which will copy a javascript file to your public/javascripts directory.
+The plugin has an install script which will copy some assets to your public directory.
 
 You then need to include the taglib, e.g. in application.dryml:
 
-    <include src="hobo_yui" plugin="hobo_yui"/>
+    <include src="hoboyui" plugin="hoboyui"/>
 
 Finally you need to activate the JavaScript in any pages where you want the editor. To do this site wide, you can extend the `<page>` tag (in application.dryml):
     
