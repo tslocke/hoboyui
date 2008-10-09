@@ -8,7 +8,7 @@ This plugin may later become a general home for Hobo extensions that utilise YUI
 
 Install with
 
-    ruby script/plugin install XXXXXXXXXXXXXXXXXXXXX
+    ruby script/plugin install git://github.com/tablatom/hoboyui.git
     
 The plugin has an instal.rb script which will copy a javascript file to your public/javascripts directory.
 
