@@ -32,3 +32,8 @@ You should now have a YUI Rich Editor for any `<input:foo>` where the field `foo
 ## More Information
 
 For more information see: [YUI Rich Editor](http://developer.yahoo.com/yui/editor/)
+
+
+## Limitations
+
+At this stage we don't have any support for using the YUI Editor for in-place-editors (the `<editor>` tag)
