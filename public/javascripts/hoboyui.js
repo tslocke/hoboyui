@@ -22,12 +22,6 @@ HoboYui = {
 
     },
     
-    initEditors: function() {
-        $$('textarea.html').each(function(el,i) {
-            HoboYui.makeEditor(el).render();
-        });
-    },
-    
     makeEditor: function(el, buttons) {
         buttons = buttons || HoboYui.toolbarConfig
         
@@ -101,8 +95,14 @@ HoboYui = {
     		{ type: 'push', label: 'Save', value: 'save', title: "Save" },
     		{ type: 'push', label: 'Cancel', value: 'cancel' }
     	  ] }
-	],
+	]
 		
 }
 
 Hobo.makeInPlaceHtmlEditor = HoboYui.makeInPlaceHtmlEditor
+
+Event.addBehavior({
+    'textarea.html' : function() {
+        HoboYui.makeEditor(this).render();
+    }
+})
