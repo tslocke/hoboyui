@@ -1,2 +1,6 @@
 .yui-toolbar-grouped {padding-top: 7px;}
 .yui-toolbar-subcont {height: 27px;}
+
+.yui-skin-sam .yui-toolbar-container .yui-toolbar-group-savecancel { float: right; }
+.yui-skin-sam .yui-toolbar-container .yui-toolbar-group-savecancel a { padding-left: 0px; }
+.yui-skin-sam .yui-toolbar-container .yui-toolbar-group-savecancel .yui-button { width: 46px; text-align: center;}

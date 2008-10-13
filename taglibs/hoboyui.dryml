@@ -11,7 +11,7 @@
   <!-- Source file for Rich Text Editor-->
   <script src="http://yui.yahooapis.com/2.5.2/build/editor/editor-beta-min.js"></script>
   <javascript name="hoboyui"/>
-  <script type="text/javascript" >Event.onReady(HoboYui.initEditor)</script>
+  <script type="text/javascript" >Event.onReady(HoboYui.initEditors)</script>
   
   <stylesheet name="hoboyui"/>
 </def>
