@@ -105,9 +105,17 @@ HoboYui = {
     		{ type: 'push', label: 'Save', value: 'save', title: "Save" },
     		{ type: 'push', label: 'Cancel', value: 'cancel' }
     	  ] }
-	],
+	]
 		
 }
 
 Hobo.makeHtmlEditor = HoboYui.makeEditor
 Hobo.makeInPlaceHtmlEditor = HoboYui.makeInPlaceHtmlEditor
+
+Event.addBehavior({
+    'textarea.html' : function() {
+        var ed = HoboYui.makeEditor(this)
+        ed.DOMReady = true
+        ed.render();
+    }
+})
