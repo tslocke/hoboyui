@@ -8,32 +8,36 @@ HoboYui = {
         ipe.afterEnterEditMode = function() {
             var textarea = ipe._controls.editor
             var config = HoboYui.toolbarConfig.concat(HoboYui.saveCancelToolbarConfig)
-            var ed = HoboYui.makeEditor(textarea, config)
-            //ed.on('toolbarLoaded', function() { 
-            //    ed.toolbar.on('saveClick', function(ev) {  });       
-            //});
-            ed.DOMReady = true
+            var ed = HoboYui.newEditor(textarea, config)
+            
+            ed.on('toolbarLoaded', function() { 
+                ed.toolbar.on('cancelClick', function(ev) { 
+                    ed.STOP_EXEC_COMMAND = true;
+                    ipe.handleFormCancellation(ev); 
+                    ed.hide();
+                })
+                ed.toolbar.on('saveClick', function(ev) {
+                    ed.saveHTML();
+                    ed.STOP_EXEC_COMMAND = true;
+                    ipe.handleFormSubmission(ev);
+                    ed.hide(); 
+                })
+            })
+            
             ed.render();
-            ////bkLib.addEvent(this._controls.ok,'click', function () {
-            ////    nicInstance.saveContent()
-            ////    setTimeout(function() {nicInstance.remove()}, 1)
-            ////})
         }
 
     },
     
-    initEditors: function() {
-        $$('textarea.html').each(function(el,i) {
-            HoboYui.makeEditor(el).render();
-        });
+    makeEditor: function(el) {
+        HoboYui.newEditor(el).render()
     },
     
-    makeEditor: function(el, buttons) {
+    newEditor: function(el, buttons) {
         buttons = buttons || HoboYui.toolbarConfig
-        
         return new YAHOO.widget.Editor(el, 
             Object.merge(
-                HoboYui.basicConfig,
+                HoboYui.editorConfig,
                 { toolbar: {
         		    draggable: false,
             		buttonType: 'advanced',
@@ -105,4 +109,5 @@ HoboYui = {
 		
 }
 
+Hobo.makeHtmlEditor = HoboYui.makeEditor
 Hobo.makeInPlaceHtmlEditor = HoboYui.makeInPlaceHtmlEditor
