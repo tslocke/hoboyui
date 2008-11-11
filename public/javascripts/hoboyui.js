@@ -46,7 +46,7 @@ HoboYui = {
             );
     },
     
-    editorConfig: { autoHeight: true, width: '99%', handleSubmit: true },
+    editorConfig: { autoHeight: true, handleSubmit: true },
     
     toolbarConfig: [
         { group: 'textstyle',
