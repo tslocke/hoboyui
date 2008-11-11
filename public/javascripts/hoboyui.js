@@ -111,11 +111,3 @@ HoboYui = {
 
 Hobo.makeHtmlEditor = HoboYui.makeEditor
 Hobo.makeInPlaceHtmlEditor = HoboYui.makeInPlaceHtmlEditor
-
-Event.addBehavior({
-    'textarea.html' : function() {
-        var ed = HoboYui.makeEditor(this)
-        ed.DOMReady = true
-        ed.render();
-    }
-})
