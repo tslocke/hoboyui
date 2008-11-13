@@ -24,7 +24,7 @@ Finally you need to activate the JavaScript in any pages where you want the edit
         <append-head:><yui-editor-assets/></append-head:>
         <body: class="yui-skin-sam" param/>
       </old-page>
-    </page>
+    </extend>
     
 You should now have a YUI Rich Editor for any `<input:foo>` where the field `foo` is declared with the `:html` type (HoboFields::HtmlString) in your model.
 
