@@ -13,6 +13,10 @@ Install with
     
 The plugin has an install script which will copy some assets to your public directory.
 
+IMPORTANT: If you install the plugin some other way, e.g. with git clone, the install script will not run and you will have to manually copy the assets into your public directory. e.g.:
+
+     $ cp -R vendor/plugins/hoboyui/public/* public/
+
 You then need to include the taglib, e.g. in application.dryml:
 
     <include src="hoboyui" plugin="hoboyui"/>
